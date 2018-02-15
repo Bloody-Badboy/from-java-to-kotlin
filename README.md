@@ -674,6 +674,9 @@ Person person;
 ```kotlin
 internal lateinit var person: Person
 ```
+
+---
+
 > Java
 
 ```java
