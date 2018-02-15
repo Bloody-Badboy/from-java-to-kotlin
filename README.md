@@ -146,6 +146,7 @@ final int orResult   = a | b;
 final int xorResult  = a ^ b;
 final int rightShift = a >> 2;
 final int leftShift  = a << 2;
+final int unsignedRightShift = a >>> 2;
 ```
 
 > Kotlin
@@ -156,6 +157,7 @@ val orResult   = a or b
 val xorResult  = a xor b
 val rightShift = a shr 2
 val leftShift  = a shl 2
+val unsignedRightShift = a ushr 2
 ```
 
 ---
@@ -672,8 +674,43 @@ Person person;
 ```kotlin
 internal lateinit var person: Person
 ```
+> Java
 
+```java
+public enum Direction {
+        NORTH(1),
+        SOUTH(2),
+        WEST(3),
+        EAST(4);
 
+        int direction;
+
+        Direction(int direction) {
+            this.direction = direction;
+        }
+
+        public int getDirection() {
+            return direction;
+        }
+    }
+```
+> Kotlin
+
+```kotlin
+enum class Direction constructor(direction: Int) {
+    NORTH(1),
+    SOUTH(2),
+    WEST(3),
+    EAST(4);
+
+    var direction: Int = 0
+        private set
+
+    init {
+        this.direction = direction
+    }
+}
+```
 ---
 
 ### Important things to know in Kotlin
